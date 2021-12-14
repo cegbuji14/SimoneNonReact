@@ -1,0 +1,501 @@
+body {
+    font-family: 'Bowlby One SC', cursive;
+    margin: 0;
+    background-color: #e6e6e6;
+}
+
+h1 {
+    line-height: 1;
+    margin: 0;
+    padding-left: 10px;
+    font-size: 5vh;
+    color: #91d372;
+}
+
+header {
+    height: 10vh;
+}
+
+.title {
+    padding: 5px;
+    background-color: #575959;
+}
+
+
+.timer-section {
+    height: 60px;
+    margin: 0 auto;
+    width: 90%;
+    background-color: #252626;
+    justify-content: center;
+    display: flex;
+}
+
+
+.game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    min-height: 400px;
+}
+
+.start-game:not(.active-start) {
+    cursor: auto;
+}
+
+
+.start-game {
+    font-size: 1.2em;
+    padding: 19px 5px 0 5px;
+    width: 61%;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 9px 12px 0px, rgba(0, 0, 0, 0.19) 0px 9px 21px 0px;
+    text-shadow: #00ff00 0 0 1px, #00ff00 1px 1px 10px;
+    font-family: Orbitron, cursive;
+    outline: none;
+    margin: 0px;
+    background-color: #063110;
+    color: #0ddc0d;
+    border: solid 3px black;
+    text-align: center;
+}
+
+.counter {
+    padding-top: 17px;
+    font-size: 1.5em;
+    text-shadow: #00ff00 0 0 1px, #00ff00 1px 1px 10px;
+    font-family: Orbitron, cursive;
+    outline: none;
+    margin-right: 0px;
+    background-color: #063110;
+    color: #0ddc0d;
+    border: solid 3px black;
+    width: 20%;
+    display: inline-block;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.selected-difficulty,
+.not-selected-difficulty {
+    min-height: 60px;
+    cursor: pointer;
+    width: 15%;
+    border: 0;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 3vw;
+    outline: none;
+    height: 10vh;
+}
+
+.show-scores {
+    min-height: 60px;
+    cursor: pointer;
+    float: right;
+    width: 30%;
+    height: 10vh;
+    font-size: 3vw;
+    border: 0;
+    font-family: 'Bowlby One SC', cursive;
+    outline: none;
+    color: #575959;
+    background-color: #7cd664;
+}
+
+.easy:not(.active-button),
+.hard:not(.active-button),
+.show-scores:not(.active-button) {
+    opacity: 0.3;
+    cursor: auto;
+}
+
+
+/*Assistance from http://jsfiddle.net/as5ZU/4363/ for background color animation*/
+
+.hard.selected-difficulty {
+    color: #575959;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #7cd664 50%, #575959 50%);
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+    background-position: 0% 0%;
+}
+
+
+.hard.not-selected-difficulty {
+    color: #9fa79a;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #7cd664 50%, #575959 50%);
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+    background-position: 100% 0;
+}
+
+.easy.selected-difficulty {
+    color: #575959;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #7cd664 50%, #575959 50%);
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+    background-position: 0% 0%;
+}
+
+
+.easy.not-selected-difficulty {
+    color: #9fa79a;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, #7cd664 50%, #575959 50%);
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+    background-position: -100% 0;
+}
+
+.menu-bar {
+    min-height: 60px;
+    background-color: #575959;
+    height: 10vh;
+    width: 100%;
+    position: absolute;
+    margin-top: auto;
+}
+
+.selector {
+    margin: 0.8em;
+    min-width: 110px;
+    min-height: 110px;
+    height: 30vw;
+    width: 30vw;
+    max-width: 25vh;
+    max-height: 25vh;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 9px 12px 0px, rgba(0, 0, 0, 0.19) 0px 9px 21px 0px;
+}
+
+.selector {
+    -webkit-transition: background-color 0.2s ease-in-out;
+    -moz-transition: background-color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.active {
+    cursor: pointer;
+}
+
+.simon-container {
+    position: relative;
+    margin: 0 auto;
+    background-color: #252626;
+    border-radius: 25px;
+    box-shadow: 10px 10px 11px -1px #838483;
+}
+
+.row-container {
+    display: flex;
+    justify-content: center;
+}
+
+.blue {
+    background-color: #81d0d7;
+    border-radius: 25px;
+
+}
+
+.red {
+    background-color: #ff9c9c;
+    border-radius: 25px;
+}
+
+.green {
+    background-color: #a0d07d;
+    border-radius: 25px;
+}
+
+.yellow {
+    background-color: #d5d05d;
+    border-radius: 25px;
+}
+
+/*Assistance from anon at https://codepen.io/jackrugile/pen/ABeIi for glow effect*/
+
+.green-highlighted {
+    animation: green-glow 1200ms ease-out infinite alternate;
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px rgba(0, 255, 0, .1);
+    color: #efe;
+    outline: none;
+    background-color: #6aff00;
+}
+
+.active.green:active {
+    background-color: #6aff00;
+}
+
+
+@keyframes green-glow {
+    0% {
+        border-color: #393;
+        box-shadow: 50px 50px 120px rgba(0, 255, 0, 0), inset 50px 50px 5px rgba(0, 255, 0, 0);
+    }
+    100% {
+        border-color: #6f6;
+        box-shadow: 0 0 120px rgba(0, 255, 0, .9), inset 0 0 5px rgba(0, 255, 0, .8);
+    }
+}
+
+.blue-highlighted {
+    animation: blue-glow 1200ms ease-out infinite alternate;
+    border-color: #393;
+    box-shadow: 0 0 5px rgba(255, 255, 255, .2), inset 0 0 5px rgba(255, 255, 255, .1);
+    color: #efe;
+    outline: none;
+    background-color: #00ebff;
+}
+
+.active.blue:active {
+    background-color: #00ebff;
+}
+
+@keyframes blue-glow { 
+    0% {
+        border-color: #3afffc;
+        box-shadow: 0 0 120px rgba(0, 231, 255, 0), inset 0 0 5px rgba(0, 231, 255, .0);
+    }
+    100% {
+        border-color: #3afffc;
+        box-shadow: 0 0 120px rgba(0, 231, 255, 1), inset 0 0 5px rgba(0, 231, 255, .8);
+    }
+}
+
+.yellow-highlighted {
+    animation: yellow-glow 1200ms ease-out infinite alternate;
+    border-color: #f4ff18;
+    box-shadow: 0 0 5px rgba(255, 255, 0, .2), inset 0 0 5px rgba(255, 255, 0, .1);
+    color: #efe;
+    outline: none;
+    background-color: #fff500;
+}
+
+.active.yellow:active {
+    background-color: #fff500;
+}
+
+@keyframes yellow-glow {
+    0% {
+        border-color: #f4ff18;
+        box-shadow: 50px 50px 120px rgba(255, 255, 0, 0), inset 50px 50px 5px rgba(255, 255, 0, 0);
+    }
+    100% {
+        border-color: #f4ff18;
+        box-shadow: 0 0 120px rgba(255, 255, 0, .9), inset 0 0 5px rgba(255, 255, 0, .8);
+    }
+}
+
+.red-highlighted {
+    animation: red-glow 1200ms ease-out infinite alternate;
+    border-color: #fc003e;
+    box-shadow: 0 0 5px rgba(255, 0, 0, .2), inset 0 0 5px rgba(255, 0, 0, .1);
+    color: #efe;
+    outline: none;
+    background-color: #ff0000;
+}
+
+.active.red:active {
+    background-color: #ff0000;
+}
+
+@keyframes red-glow {
+    0% {
+        border-color: #fc003e;
+        box-shadow: 50px 50px 120px rgba(255, 0, 0, 0), inset 50px 50px 5px rgba(255, 0, 0, 0);
+    }
+    100% {
+        border-color: #fc003e;
+        box-shadow: 0 0 120px rgba(255, 0, 0, .9), inset 0 0 5px rgba(255, 0, 0, .8);
+    }
+}
+
+
+/*Assistance from https://www.w3schools.com/howto/howto_css_modals.asp for modal*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 0px 0px 0px 0px;
+    border: none;
+    z-index: 3;
+    margin-top: 70px;
+    width: 80%;
+    border-radius: 15px;
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.submit-title h2 {
+    padding: 5px 0 0 5px;
+    font-size: 4vw;
+    line-height: 1;
+    color: #00874a;
+}
+
+.leaderboard-message {
+    font-size: 5vw;
+    text-align: center;
+    color: #33acb7;
+    line-height: 1.1;
+}
+
+
+input[name="hardNameSubmit"] {
+    border: none;
+    background-color: #575959;
+    width: 70%;
+    font-family: 'Bowlby One SC', cursive;
+    color: #9fa79a;
+    padding: 0 0 0 5%;
+    outline: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    border-radius: 0 0 0 15px;
+    height: 12vw;
+    font-size: 3vw;
+}
+
+.submit-button {
+    border: none;
+    width: 25%;
+    vertical-align: middle;
+    height: 12vw;
+    background-color: #f6e4e9;
+    color: #00874a;
+    font-family: 'Bowlby One SC', cursive;
+    float: right;
+    padding: 0;
+    font-size: 3vw;
+    border-radius: 0 0 15px 0;
+}
+
+.leaderboard-title {
+    line-height: 1;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #00874a;
+    padding-left: 10px;
+    padding-top: 10px;
+    display: none;
+}
+
+.leaderboard-title h2 {
+    margin: 0;
+    font-size: 5.5vw;
+}
+
+.table {
+    width: 97%;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.table th {
+    width: 24%;
+}
+
+.table th:first-child {
+    width: 8%;
+}
+
+.table tr:nth-child(2) {
+    font-size: 5vw;
+}
+
+.table tr:nth-child(3) {
+    font-size: 4vw;
+}
+
+
+.table tr:nth-child(4) {
+    font-size: 3vw;
+}
+
+
+.table tr:nth-child(2) td:first-child {
+    background-color: yellow;
+    border-radius: 100%;
+    padding: 20px;
+}
+
+.table tr:nth-child(2) td:nth-child(2) {
+    background-color: yellow;
+    border-radius: 30px 0px 0px 30px;
+}
+
+
+.table tr:nth-child(2) td:nth-child(3) {
+    background-color: yellow;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.table tr:nth-child(3) td:nth-child(2) {
+    background-color: rgba(252, 255, 0, .5);
+    border-radius: 30px 0px 0px 30px;
+}
+
+.table tr:nth-child(3) td:nth-child(3) {
+    background-color: rgba(252, 255, 0, .5);
+    border-radius: 0px 30px 30px 0px;
+}
+
+.table tr:nth-child(4) td:nth-child(2) {
+    background-color: rgba(252, 255, 0, .2);
+    border-radius: 30px 0px 0px 30px;
+}
+
+.table tr:nth-child(4) td:nth-child(3) {
+    background-color: rgba(252, 255, 0, .2);
+    border-radius: 0px 30px 30px 0px;
+}
+
+td {
+    padding: 10px;
+}
+
+
+tr {
+    font-size: 2.5vw;
+    color: #00874a;
+}

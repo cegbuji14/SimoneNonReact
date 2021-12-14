@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simone </title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <h1>SIM<br> ONE</h1>
+        </div>
+    </header>
+
+
+
+    <div class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form class="submit-score">
+                <div class="submit-title">
+                    <h2>GAME<br>OVER</h2>
+                </div>
+                <div class="leaderboard-message">
+                    <h3>YOU'VE MADE THE LEADERBOARD!</h3>
+                </div>
+                <div>
+                    <input placeholder="ENTER NAME" maxlength="13" autocomplete="off" type="text" name="hardNameSubmit">
+                    <button class="submit-button">SUBMIT</button>
+                </div>
+            </form>
+            <div class="leaderboard-title"></div>
+            <div>
+                <table class="table">
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="game-area">
+        <div class="simon-container">
+            <div class="row-container">
+                <div id="0" class="blue selector"></div>
+                <div id="1" class="red selector"></div>
+            </div>
+            <div class="timer-section">
+                <div class="start-game active-start">START GAME</div>
+                <div class="counter">0</div>
+            </div>
+            <div class="row-container">
+                <div id="2" class="green selector"></div>
+                <div id="3" class="yellow selector"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-bar">
+        <div class="difficulty-buttons">
+            <button class="active-button selected-difficulty easy">EASY</button><button class="active-button not-selected-difficulty hard">HARD</button>
+            <button class="active-button show-scores">LEADERBOARD</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
